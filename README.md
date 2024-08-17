@@ -33,3 +33,16 @@ curl -L https://github.com/docker/compose/releases/download/1.9.0/docker-compose
 ### 使用コマンド
 
 - docker-compose run php composer create-project --prefer-dist laravel/laravel .
+
+
+[docker fileの公式リファレンス](https://docs.docker.jp/engine/reference/builder.html)  
+[Docker fileのベストプラクティス](https://docs.docker.jp/develop/develop-images/dockerfile_best-practices.html)  
+
+## コンテナは、エフェメラル(状態を持たない)であるべき
+コンテナそれぞれがデータを持っていて変動する動きは辞めるべき  
+
+## .dockerignoreファイルを使う
+不要なパッケージインストールを避ける
+コンテナの中のプロセスは最小限のものをインストールする
+イメージレイヤーは最小限にとどめる
+複数行の場合　\
